@@ -1,0 +1,282 @@
+@import '~bootstrap/scss/bootstrap';
+@import '~react-toastify/scss/main.scss';
+@import './assets/scss/uicons-regular-rounded.css';
+
+.form-wrapper{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    background: #add4ff;
+    .form-signin{
+        width: 25rem;
+        align-self: center;
+        background: #fff;
+        box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.1);
+        border-radius: 20px;
+        padding: 40px;
+        min-height: 450px;
+        svg{
+            width: 36px;
+            height: 36px;
+            margin: 0 0 20px;
+        }
+    }
+}
+
+.site-header {
+    background-color: rgba(0, 0, 0, .85);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+    a {
+        color: #999;
+        transition: ease-in-out color .15s;
+        &:hover {
+          color: #fff;
+          text-decoration: none;
+        }
+    }
+    .headers-icon-group{
+        .badge {
+            padding: 0;
+            font-size: 11px;
+            vertical-align: super;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            line-height: 15px;
+            position: absolute;
+            top: 8px;
+        }
+    } 
+}
+
+.card {
+    height: 310px;
+    overflow: hidden;
+    border: none;
+    border-radius: 0;
+    margin: 0 0 30px;
+    .photo-link {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        img {
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    .photo-item-info {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 1.25rem;
+        display: flex;
+        justify-content: space-between;
+        opacity: 0;
+        -webkit-transition: opacity .2s;
+        transition: opacity .2s;
+        z-index: 2;
+        a, span{
+            color: #fff;
+            text-decoration: none;
+            cursor: pointer;
+            user-select: none;
+            color: rgba(255, 255, 255, 0.85);
+            &:hover{
+                color: rgba(255, 255, 255, 1);
+            }
+        }
+    }
+    &::before{
+        content: "";
+        pointer-events: none;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 80px;
+        background: -webkit-gradient(linear,left bottom,left top,from(rgba(0,0,0,0.5)),to(transparent));
+        background: linear-gradient(to top,rgba(0,0,0,0.5) 0%,transparent 100%);
+        opacity: 0;
+        -webkit-transition: opacity .2s;
+        transition: opacity .2s;
+        border-bottom-left-radius: 2px;
+        border-bottom-right-radius: 2px;
+        z-index: 1;
+    }
+    &:hover::before{
+        opacity: 1;
+        -webkit-transition-delay: .1s;
+        transition-delay: .1s;
+    }
+    &:hover{
+        .photo-item-info{
+            opacity: 1;
+            -webkit-transition-delay: .1s;
+            transition-delay: .1s;
+        }
+    }
+}
+
+.footer-info {
+    a{
+        color: currentColor;
+        &:hover{
+            color: #007bff;
+        }
+    }
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-main {
+    min-height: calc(100vh - 122px);
+}
+
+.table {
+    font-size: 14px;
+    thead th {
+        border-bottom: none;
+    }
+    th, td{
+        padding: 0.75rem 0;
+        vertical-align: middle;
+    }
+    img{
+        width: 100px;
+        height: 66px;
+        object-fit: cover;
+        border-radius: 4px;
+    }
+    .btn-sm{
+        border-radius: 50%;
+        height: 26px;
+        width: 26px;
+        padding: 0;
+        line-height: 26px;
+        font-size: 12px;
+    }
+    .value {
+        display: inline-block;
+        min-width: 40px;
+        text-align: center;
+        padding: 0 10px;
+        font-weight: 500;
+    }
+    span.inc-btn {
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 17px;
+        cursor: pointer;
+        width: 18px;
+        height: 18px;
+        text-align: center;
+        line-height: 18px;
+        border-radius: 4px;
+        background: #e5edff;
+    }
+}
+
+.pay-now {
+    text-align: right;
+    .StripeCheckout{
+        box-shadow: none !important;
+        background: #007bff !important;
+        border-color: #007bff !important;
+        span{
+            background-image: none !important;
+            text-shadow: none !important;
+            box-shadow: none !important;
+            font-weight: normal !important;
+            height: auto !important;
+            padding: 0.375rem 0.75rem !important;
+            line-height: inherit !important;
+        }
+    }
+}
+
+.photoGrapher_profile {
+    display: flex;
+    justify-content: space-between;
+    img {
+        border-radius: 100%;
+        margin: 0 10px 0 0;
+    }
+    .profile_info_wrap {
+        display: flex;
+    }
+    .profile_info{
+        h6 {
+            align-self: center;
+        }
+        .btn {
+            border-radius: 100%;
+            padding: 0;
+            height: 30px;
+            width: 30px;
+            line-height: 30px;
+        }
+    }
+    span.price {
+        font-weight: 500;
+    } 
+}
+
+.comments-container{
+    .card{
+        height: 530px;
+        img{
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    .comment-form {
+        display: flex;
+        .profile_photo {
+            width: 40px;
+            height: 40px;
+            border-radius: 100%;
+            margin: 0 15px 0 0;
+        }
+        form {
+            width: 100%;
+        }
+        textarea{
+            height: 100px;
+            resize: none;
+        }
+    }
+    .comment-list {
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+        li {
+            display: flex;
+            border-top: 1px solid #f1f1f1;
+            padding: 10px 0;
+            font-size: 14px;
+            .profile_photo {
+                width: 40px;
+                height: 40px;
+                border-radius: 100%;
+                margin: 0 10px 0 0;
+            }
+            .comment-detail{
+                width: 100%;
+                span.name {
+                    font-weight: 500;
+                    display: inline-block;
+                    padding: 0 0 5px;
+                }
+                p {
+                    margin: 0;
+                }
+            } 
+        }
+        
+    }
+}
