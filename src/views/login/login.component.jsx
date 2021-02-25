@@ -1,12 +1,12 @@
 import { Form, Formik } from "formik";
 import { Spinner } from "react-bootstrap";
-import { Link, Redirect, useHistory } from "react-router-dom";
+import { Link, Redirect, useLocation } from "react-router-dom";
 import InputField from "../../components/common/InputField";
 import Logo from "../../components/common/Logo";
 import loginSchema from "../../utils/formValidation/loginValidation";
 
 const LoginForm = () => {
-    const history = useHistory()
+    const location = useLocation()
 
     const formData = {
         email: '',
@@ -23,7 +23,8 @@ const LoginForm = () => {
                     actions.setSubmitting(true)
                     localStorage.setItem('pm-token', '563492ad6f9170000100000122fb5169eedb4e259e55df444e92ab78')
                     actions.setSubmitting(false)
-                    history.push('/customer')
+                    const { state } = location
+                    window.location = state ? state.from.pathname : '/customer'
                 }}
             >
             {({ isSubmitting, errors, touched }) => (
