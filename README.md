@@ -6,8 +6,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 This project has been hosted in vercel. [Demo](https://react-photo-marketplace.vercel.app/)
 
-email: {enter any valid email address}
-password: {any random password}
+**email:** `{ enter any valid email address }`\
+**password:** `{ any random password }`
 
 ## Available Scripts
 
